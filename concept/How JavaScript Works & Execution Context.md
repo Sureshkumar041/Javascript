@@ -809,3 +809,191 @@ Blocking the main thread happens when long synchronous tasks prevent the event l
 
 ❓ Is JavaScript asynchronous?
 ✔ No — JavaScript is single-threaded, but the runtime environment makes it async.
+
+👉 JS-15 Asynchronous JavaScript & EVENT LOOP 👈
+
+🔁 What is the Event Loop?
+📝 One-Line Interview Answer
+
+The event loop continuously checks the call stack and executes microtasks and macrotasks in order to handle asynchronous operations without blocking the main thread.
+
+The Event Loop is a mechanism that coordinates:
+
+-> Call Stack
+-> Web APIs
+-> Callback / Task Queue
+-> Microtask Queue
+
+to allow JavaScript (single-threaded) to perform non-blocking asynchronous operations.
+
+💡 JavaScript itself is synchronous.
+The Event Loop is part of the JS runtime (Browser / Node.js), not the JS engine.
+
+🧱 Components of the Event Loop
+
+1️⃣ Call Stack
+
+1. Executes JS code line by line
+2. Uses LIFO (Last In, First Out)
+
+```javascript
+function a() {
+  b();
+}
+function b() {
+  console.log("Lets Play Cricket 🏏 eeE...");
+}
+a();
+
+// Stack flow:
+// a -> b -> console.log → pop → pop
+```
+
+2️⃣ Web APIs (Browser)
+
+Provided by the browser, not JS:
+
+1.  setTimeout
+2.  DOM events
+3.  fetch
+4.  setInterval
+
+They handle async tasks off the main thread.
+
+3️⃣ Callback / Task Queue (Macrotask Queue)
+
+Holds callbacks from:
+
+1. setTimeout
+2. setInterval
+3. DOM events
+4. MessageChannel
+
+4️⃣ Microtask Queue (High Priority)
+
+Holds:
+
+1. Promise.then / catch / finally
+2. queueMicrotask
+3. MutationObserver
+
+📌 Microtasks run BEFORE macrotasks
+
+5️⃣ Event Loop (The Orchestrator)
+
+Continuously:
+
+1. Checks if Call Stack is empty
+2. Executes all Microtasks
+3. Executes one Macrotask
+4. Repeats
+
+![js-event-loop](./../assets/image/js-event-loop-explained.png)
+
+🔄 Event Loop Flow (Visual)
+
+Call Stack
+↓
+Web APIs
+↓
+Microtask Queue ← (Highest Priority)
+↓
+Callback Queue (Macrotask)
+↓
+Event Loop → Call Stack
+
+🔥 Core Example (Must-Know)
+
+```javascript
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("Promise");
+});
+
+console.log("End");
+```
+
+Console
+
+```powershell
+Start
+End
+Promise
+Timeout
+```
+
+![Macro Task](./../assets/gif/macrotask1.gif)
+
+Why?
+
+1️⃣ Synchronous code runs first
+2️⃣ Promise → Microtask Queue
+3️⃣ setTimeout → Macrotask Queue
+4️⃣ Microtask runs before Macrotask
+
+🧠 Step-by-Step Execution
+
+| Step | Action                    |
+| ---- | ------------------------- |
+| 1    | `Start` logged            |
+| 2    | `setTimeout` → Web API    |
+| 3    | Promise → Microtask Queue |
+| 4    | `End` logged              |
+| 5    | Call stack empty          |
+| 6    | Microtasks executed       |
+| 7    | Macrotask executed        |
+
+⚠️ Important Rule (Interview Favorite)
+✅ Microtasks drain completely before any Macrotask executes
+
+🔴 Starvation Problem (Microtask Hell)
+
+```javascript
+function recurse() {
+  Promise.resolve().then(recurse);
+}
+recurse();
+```
+
+❌ Macrotasks never run
+❌ UI freezes
+
+➡️ Microtask starvation
+
+⏱ setTimeout(0) is NOT zero
+
+```javascript
+setTimeout(() => console.log("Timer"), 0);
+```
+
+Why delay?
+
+-> Browser minimum delay (~4ms)
+-> Waits for call stack
+-> Microtasks must finish
+
+🧠 Why Event Loop Matters
+
+Prevents UI freezing
+
+Enables async programming
+
+Explains:
+
+-> async/await
+-> Promises
+-> Callbacks
+-> Event listeners
+
+🧩 Common Misconceptions
+
+❌ JS is multithreaded
+✔ JS is single-threaded, runtime is async
+
+❌ setTimeout runs exactly on time
+✔ Runs after stack + microtasks

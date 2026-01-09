@@ -5,6 +5,11 @@
 ```javascript
 ```
 
+```powershell
+```
+
+![Alt](<>)
+
 Naal - 06-05-2025 🗓
 
 Naal - 25-08-2025 🗓
@@ -41,3 +46,7 @@ Naal - 07-01-2026 🗓
 Naal - 08-01-2026 🗓
 
 14. Callback Functions in JS ft. Event Listeners
+
+Naal - 09-01-2026 🗓
+
+15. Asynchronous JavaScript & EVENT LOOP
