@@ -997,3 +997,81 @@ Explains:
 
 ❌ setTimeout runs exactly on time
 ✔ Runs after stack + microtasks
+
+👉 JS-16 JS Engine EXPOSED Google's V8 Architecture 👈
+
+JavaScript Runtime Environment
+
+A JavaScript Runtime Environment is everything needed to execute JavaScript.
+
+1️⃣ What a JavaScript Runtime Environment Is
+
+JavaScript Engine
+
+- Web / System APIs
+- Event Loop
+- Callback / Task Queues
+
+2️⃣ Core Components
+
+🧠 1. JavaScript Engine
+
+Executes JavaScript code.
+
+Popular engines:
+
+1.  V8 → Chrome, Node.js
+2.  SpiderMonkey → Firefox
+3.  JavaScriptCore → Safari
+
+🌐 2. APIs (Provided by the Host)
+
+These are NOT part of JavaScript.
+
+🔁 3. Event Loop
+
+Handles asynchronous, non-blocking execution.
+
+The event loop:
+
+-> Monitors queues
+-> Pushes callbacks to the call stack when it’s empty
+
+JavaScript itself is single-threaded
+➡️ Async behavior is enabled by the runtime.
+
+![Alt](./../assets/image/JSRunTimeEnv.png)
+
+Google’s V8 is a high-performance JavaScript and WebAssembly engine written in C++.
+
+V8 Pipeline
+
+JavaScript
+↓
+Parser → AST
+↓
+Ignition (Bytecode Interpreter)
+↓
+TurboFan (Optimized Machine Code)
+↺ (Deopt if assumptions break)
+
+1️⃣ From Source Code to Execution
+
+Step 1: Parsing
+
+-> JS source is tokenized and parsed into an AST (Abstract Syntax Tree).
+-> Syntax errors are caught here.
+
+Step 2: Ignition (Interpreter)
+
+->The AST is compiled into bytecode by Ignition.
+-> Bytecode starts executing immediately → fast startup.
+-> While running, Ignition collects profiling data (types, hot paths).
+
+2️⃣ TurboFan — The Optimizing JIT Compiler
+
+Bytecode + runtime feedback → TurboFan
+
+3️⃣ Memory Management & Garbage Collection
+
+![Alt](./../assets/image/JSEngine.png)

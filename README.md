@@ -3,12 +3,14 @@
 👉 JS- 👈
 
 ```javascript
+
 ```
 
 ```powershell
+
 ```
 
-![Alt](<>)
+![Alt]()
 
 Naal - 06-05-2025 🗓
 
@@ -21,7 +23,7 @@ Naal - 31-12-2025 🗓
 1. How JavaScript Works & Execution Context
 2. How JavaScript Code is executed? & Call Stack
 3. Hoisting in JavaScript(variables & functions)
-4. How functions work in JS ❤️ & Variable Environment
+4. How functions work in JS & Variable Environment
 5. SHORTEST JS Program window & this keyword
 
 Naal - 02-01-2026 🗓
@@ -50,3 +52,12 @@ Naal - 08-01-2026 🗓
 Naal - 09-01-2026 🗓
 
 15. Asynchronous JavaScript & EVENT LOOP
+Solving Js Problems in Namaste Dev - Count(1)
+
+Naal - 10-01-2026 🗓
+
+16. JS Engine EXPOSED Google's V8 Architecture
+
+Solving Js Problems in Namaste Dev
+
+<p>Write a function - findMaxNumber -> that takes an array of numbers as input and returns the largest number in the array. If the array is empty, return null.</p>
