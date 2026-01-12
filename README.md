@@ -52,13 +52,16 @@ Naal - 08-01-2026 🗓
 Naal - 09-01-2026 🗓
 
 15. Asynchronous JavaScript & EVENT LOOP
-Solving Js Problems in Namaste Dev - Count(1)
+    Solving Js Problems in Namaste Dev - Count(1)
 
 Naal - 12-01-2026 🗓
 
 16. JS Engine EXPOSED Google's V8 Architecture
 17. TRUST ISSUES with setTimeout()
+18. Higher-Order Functions ft. Functional Programming
+19. map, filter & reduce
 
+Not Started ->
 Solving Js Problems in Namaste Dev
 
 <p>Write a function - findMaxNumber -> that takes an array of numbers as input and returns the largest number in the array. If the array is empty, return null.</p>

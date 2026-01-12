@@ -1148,7 +1148,6 @@ Because in JavaScript, functions are first-class citizens.
 
 ![Alt](./../assets/webp/higher-order-functions.webp)
 
-
 2️⃣ Functions as First-Class Citizens
 
 That means functions can be:
@@ -1173,4 +1172,88 @@ Function Programming - HOF
 5. Cleaner, safer, more expressive code
 
 <!-- ![Alt](./../assets/other/hoc.avif) -->
+
 ![Alt](./../assets/webp/higher-order-function-code.webp)
+
+👉 JS-19 map, filter & reduce 👈
+
+1️⃣ map() → Transform
+
+Takes every element and transforms it - Returns a new array, Does not mutate original
+
+2️⃣ filter() → Select
+
+Keeps elements that pass a condition - Length may change, Returns a new array
+
+3️⃣ reduce() → Combine
+
+Reduces an array to a single value
+
+```javascript
+const arr = [
+  {
+    name: "sur",
+    age: 25,
+  },
+  {
+    name: "ani",
+    age: 25,
+  },
+  {
+    name: "ayeshu",
+    age: 28,
+  },
+  { name: "kevin", age: 34 },
+];
+const ageWiseCount = arr.reduce((acc, curr) => {
+  if (acc?.[curr.age]) {
+    acc[curr.age] = acc?.[curr.age] + 1;
+  } else {
+    acc[curr.age] = 1;
+  }
+  return acc;
+}, {});
+
+// Find people who are age less than 30 (Using filter, reduce)
+const output1 = arr.filter((v) => v.age < 30).map((e) => e.name);
+
+const output2 = arr.reduce((acc, curr) => {
+  if (curr.age < 30) acc.push(curr.name);
+
+  return acc;
+}, []);
+
+console.log(ageWiseCount);
+console.log(output1);
+console.log(output2);
+```
+
+Output
+
+```powershell
+// ageWiseCount
+{
+    "25": 2,
+    "28": 1,
+    "34": 1
+}
+// People
+[
+    "sur",
+    "ani",
+    "ayeshu"
+]
+[
+    "sur",
+    "ani",
+    "ayeshu"
+]
+```
+
+One Table to Rule Them All
+
+| Method | Purpose   | Output                  |
+| ------ | --------- | ----------------------- |
+| map    | Transform | New array (same length) |
+| filter | Select    | New array (≤ length)    |
+| reduce | Combine   | Any value               |
