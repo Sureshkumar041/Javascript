@@ -1133,3 +1133,44 @@ timeout
 ```
 
 ![Alt](./../assets/gif/settimeout.gif)
+
+👉 JS-18 Higher-Order Functions ft. Functional Programming 👈
+
+1️⃣ What Is a Higher-Order Function?
+
+A Higher-Order Function is a function that:
+
+✔ Takes another function as an argument
+✔ Returns a function
+✔ Or both
+
+Because in JavaScript, functions are first-class citizens.
+
+![Alt](./../assets/webp/higher-order-functions.webp)
+
+
+2️⃣ Functions as First-Class Citizens
+
+That means functions can be:
+
+-> Assigned to variables
+-> Passed as arguments
+-> Returned from other functions
+
+```javascript
+const play = () => "Cricket";
+const now = when;
+
+now(); // "Hello" -> This ability enables HOFs.
+```
+
+Function Programming - HOF
+
+1. Higher-Order Functions accept or return functions
+2. They enable Functional Programming
+3. map, filter, reduce are HOFs
+4. FP = composition, immutability, purity
+5. Cleaner, safer, more expressive code
+
+<!-- ![Alt](./../assets/other/hoc.avif) -->
+![Alt](./../assets/webp/higher-order-function-code.webp)
