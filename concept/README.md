@@ -1075,3 +1075,61 @@ Bytecode + runtime feedback → TurboFan
 3️⃣ Memory Management & Garbage Collection
 
 ![Alt](./../assets/image/JSEngine.png)
+
+👉 JS-17 TRUST ISSUES with setTimeout() 👈
+
+1️⃣ What setTimeout Actually Does
+
+Call Stack
+↓
+Browser / Node Timer API
+↓ (minimum delay)
+Task Queue (macrotask)
+↓ (only when stack is empty)
+Call Stack
+
+⛔ If the call stack is busy → your callback waits longer
+
+2️⃣ Call Stack Blocking (Most Common Bug)
+
+```javascript
+console.log("Lets Play");
+
+setTimeout(() => console.log("Bowled"), 1000);
+
+console.log("Batting");
+
+const start = Date.now();
+while (Date.now() - start < 3000) {} // blocks thread
+
+console.log("Bowling");
+```
+
+Output:
+
+```powershell
+Lets Play
+Batting
+Bowling
+Bowled // log After 3 second
+```
+
+Why?
+
+-> JS is single-threaded
+-> Event loop can’t run callbacks while stack is busy
+
+3️⃣ Microtasks Jump the Line 😤
+
+```javascript
+setTimeout(() => console.log("timeout"), 0);
+
+Promise.resolve().then(() => console.log("promise"));
+```
+
+```powershell
+promise
+timeout
+```
+
+![Alt](./../assets/gif/settimeout.gif)

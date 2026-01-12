@@ -54,9 +54,10 @@ Naal - 09-01-2026 🗓
 15. Asynchronous JavaScript & EVENT LOOP
 Solving Js Problems in Namaste Dev - Count(1)
 
-Naal - 10-01-2026 🗓
+Naal - 12-01-2026 🗓
 
 16. JS Engine EXPOSED Google's V8 Architecture
+17. TRUST ISSUES with setTimeout()
 
 Solving Js Problems in Namaste Dev
 
