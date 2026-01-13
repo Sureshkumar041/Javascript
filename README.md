@@ -63,6 +63,9 @@ Naal - 12-01-2026 🗓
 
 Naal - 13-01-2026 🗓
 
+20. Callback Hell
+21. Promises
+
 Not Started ->
 Solving Js Problems in Namaste Dev
 

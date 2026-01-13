@@ -1367,9 +1367,69 @@ Inversion of Control
 
 TL;DR ⚡
 
-Callbacks enable async behavior
-Callback Hell = unreadable nested async code
-Inversion of Control = giving control to someone else
-Promises & async/await fix these problems
+- Callbacks enable async behavior
+- Callback Hell = unreadable nested async code
+- Inversion of Control = giving control to someone else
+- Promises & async/await fix these problems
 
 ![Alt](./../assets/image/callbackHell.jpg)
+
+21. Promises
+
+Promises is the new way of handling asynchronous operations in JavaScript.
+
+Promises are the foundation of modern async JavaScript.
+They solve callback hell and inversion of control by giving you back control.
+
+1️⃣ What Is a Promise?
+
+A Promise is an object that represents the eventual result of an asynchronous operation.
+
+It’s a placeholder for a value that will be available later.
+
+2️⃣ Promise States (Very Important 🧠)
+
+A Promise can be in only one of these states:
+
+```powershell
+pending   → fulfilled (resolved)
+         → rejected
+```
+
+🔒 Immutable once settled
+➡️ Can never change again
+
+4️⃣ Consuming a Promise
+
+```javascript
+promise
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error))
+  .finally(() => console.log("Always runs"));
+```
+
+Why This Is Better Than Callbacks
+
+✔ Flat structure
+✔ Single error channel
+✔ Guaranteed one-time resolution
+
+![Alt](./../assets/image/promise.jpg)
+
+4️⃣ Promise Chaining 🔗
+
+```javascript
+fetchUser()
+  .then((user) => fetchOrders(user))
+  .then((orders) => processOrders(orders))
+  .then((result) => console.log(result))
+  .catch((err) => console.error(err));
+```
+
+Each then:
+
+- Receives previous result
+- Returns a new Promise
+- Avoids nesting
+
+![Alt](./../assets/image/promiseChaining.png)
