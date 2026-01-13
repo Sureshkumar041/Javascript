@@ -61,6 +61,8 @@ Naal - 12-01-2026 🗓
 18. Higher-Order Functions ft. Functional Programming
 19. map, filter & reduce
 
+Naal - 13-01-2026 🗓
+
 Not Started ->
 Solving Js Problems in Namaste Dev
 

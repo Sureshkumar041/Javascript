@@ -1257,3 +1257,119 @@ One Table to Rule Them All
 | map    | Transform | New array (same length) |
 | filter | Select    | New array (≤ length)    |
 | reduce | Combine   | Any value               |
+
+👉 JS-20 Callback Hell 👈
+
+1️⃣ Callback
+What is a Callback?
+
+A callback is a function passed to another function to be executed later.
+
+```javascript
+function fetchData(callback) {
+  setTimeout(() => {
+    callback("Data received");
+  }, 1000);
+}
+
+fetchData((data) => {
+  console.log(data);
+});
+```
+
+Why Callbacks Exist
+
+-> JS is asynchronous
+-> Long tasks (I/O, timers) shouldn’t block the thread
+-> Callbacks run after the task finishes
+
+2️⃣ Callback Hell 😵 (Pyramid of Doom)
+The Problem
+
+```javascript
+getUser(id, (user) => {
+  getOrders(user, (orders) => {
+    getDetails(orders, (details) => {
+      process(details, (result) => {
+        console.log(result);
+      });
+    });
+  });
+});
+```
+
+This leads to:
+❌ Deep nesting
+❌ Hard-to-read code
+❌ Hard error handling
+❌ Hard debugging
+
+📛 This structure is called Callback Hell.
+
+Why It Happens
+
+Each async step depends on the previous one
+Control flow becomes nested instead of linear
+
+3️⃣ Inversion of Control (The Real Danger ⚠️)
+What It Means
+
+Inversion of Control (IoC) happens when you give control of your code to another function/library.
+
+With callbacks:
+
+1. You hand over your function
+2. You trust it to call:
+   -> At the right time
+   -> Once (not twice)
+   -> With correct data
+   -> With proper error handling
+
+```javascript
+setTimeout(() => {
+  // Will it run once? On time? With errors?
+}, 1000);
+```
+
+4️⃣ How Promises Fix These Issues ✅
+
+Promise = You Keep Control
+
+➡️ Control flow returns to you
+
+```javascript
+getUser(id)
+  .then((user) => getOrders(user))
+  .then((orders) => getDetails(orders))
+  .then((result) => console.log(result))
+  .catch((err) => console.error(err));
+```
+
+5️⃣ async / await (Best of Both Worlds 🏆)
+
+Reads like synchronous code
+Runs asynchronously
+No inversion of control issues
+
+6️⃣ Mental Models (Interview Gold 🧠)
+
+Callback
+
+“A function executed later by another function.”
+
+Callback Hell - Pyramid of Doom
+
+“Deeply nested callbacks that destroy readability and control.”
+
+Inversion of Control
+
+“Losing control over when and how your code executes.”
+
+TL;DR ⚡
+
+Callbacks enable async behavior
+Callback Hell = unreadable nested async code
+Inversion of Control = giving control to someone else
+Promises & async/await fix these problems
+
+![Alt](./../assets/image/callbackHell.jpg)
