@@ -1374,7 +1374,7 @@ TL;DR ⚡
 
 ![Alt](./../assets/image/callbackHell.jpg)
 
-21. Promises
+👉 JS-21 Promises 👈
 
 Promises is the new way of handling asynchronous operations in JavaScript.
 
@@ -1399,7 +1399,7 @@ pending   → fulfilled (resolved)
 🔒 Immutable once settled
 ➡️ Can never change again
 
-4️⃣ Consuming a Promise
+3️⃣ Consuming a Promise
 
 ```javascript
 promise
@@ -1433,3 +1433,130 @@ Each then:
 - Avoids nesting
 
 ![Alt](./../assets/image/promiseChaining.png)
+
+👉 JS-22 Creating a Promise, Chaining & Error Handling 👈
+
+1️⃣ Creating a Promise
+
+```javascript
+const myPromise = new Promise(function (resolve, reject) {
+  const success = true;
+
+  if (success) {
+    resolve("Task completed successfully");
+  } else {
+    reject("Task failed to complete");
+  }
+});
+```
+
+-> resolve(value) → Promise is fulfilled
+-> reject(error) → Promise is rejected
+
+2️⃣ Consuming a Promise (then & catch)
+
+```javascript
+const myPromise = new Promise();
+
+myPromise
+  .then(function (res) {
+    console.log("res:", res);
+  })
+  .catch(function (err) {
+    console.log("err: ", err);
+  });
+```
+
+-> .then() runs when the promise resolves
+-> .catch() runs when it rejects
+
+3️⃣ Promise Chaining
+
+Each .then() can return a value or another Promise.
+
+```javascript
+function testPromise(value) {
+  return new Promise((resolve, reject) => {
+    resolve(value);
+  });
+}
+
+const myPromise = testPromise("Hi");
+
+myPromise
+  .then(function (res) {
+    console.log(res);
+    return res;
+  })
+  .then(function (data) {
+    return testPromise(`${data} Suresh`);
+  })
+  .then(function (data) {
+    console.log(data);
+  })
+  .catch(function (err) {
+    console.log("err: ", err);
+  });
+```
+
+👉 Whatever you return from .then() is passed to the next .then().
+
+4️⃣ Error Handling in Chains
+
+If any promise fails, control jumps to .catch().
+
+```javascript
+function testPromise(value) {
+  return new Promise((resolve, reject) => {
+    const success = false;
+
+    if (success) resolve(value);
+    else reject("Failed");
+  });
+}
+
+const myPromise = testPromise("Hi");
+
+myPromise
+  .then(function (res) {
+    console.log(res);
+    return res;
+  })
+  .then(function (data) {
+    return testPromise(`${data} Suresh`);
+  })
+  .then(function (data) {
+    console.log(data);
+  })
+  .catch(function (err) {
+    console.log("err: ", err);
+  });
+```
+
+5️⃣ Multiple .catch() (Advanced)
+
+A .catch() can recover and continue the chain.
+
+```javascript
+function isNumber(value) {
+  return new Promise((resolve, reject) => {
+    if (!isNaN(value)) resolve(`${value} is Valid Number`);
+    else reject(`${value} is not an number`);
+  });
+}
+
+const numberPromise = isNumber("Suresh");
+
+numberPromise
+  .then((res) => console.log(res))
+  .catch((err) => {
+    console.log("Err: ", err);
+  })
+  .then((res) => {
+    return isNumber("1");
+  })
+  .then((res) => console.log(res))
+  .catch((err) => {
+    console.log("Err: ", err);
+  });
+```

@@ -66,6 +66,25 @@ Naal - 13-01-2026 🗓
 20. Callback Hell
 21. Promises
 
+Naal - 20-01-2026 🗓
+
+```html
+<p>
+  Design a function <code>sum</code> that can take any number of arguments and
+  return their total. The function should work for both fixed and variable
+  number of arguments using JavaScript features. Only numerical arguments will
+  be provided.
+</p>
+```
+
+Naal - 03-02-2026 🗓
+
+22. Creating a Promise, Chaining & Error Handling
+
+Naal - 04-02-2026 🗓
+
+22. Creating a Promise, Chaining & Error Handling
+
 Not Started ->
 Solving Js Problems in Namaste Dev
 
