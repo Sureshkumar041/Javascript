@@ -1560,3 +1560,33 @@ numberPromise
     console.log("Err: ", err);
   });
 ```
+
+👉 JS-23 Async await 👈
+
+1. what is async ...?
+
+In JavaScript, async is a keyword used to define a function that always returns a Promise and lets you write asynchronous code that looks synchronous.
+
+```javascript
+async function verify() {
+  return "Suresh";
+}
+
+const res = verify();
+
+console.log(res);
+
+res.then((res) => console.log("res -> ", res));
+```
+
+Output:
+
+```powershell
+// Log 1
+[[Prototype]]: Promise
+[[PromiseState]]: "fulfilled"
+[[PromiseResult]]: "Suresh"
+
+// Log 2
+res ->  Suresh
+```

@@ -84,6 +84,13 @@ Naal - 03-02-2026 🗓
 Naal - 04-02-2026 🗓
 
 22. Creating a Promise, Chaining & Error Handling
+23. Async await
+
+
+Naal - 05-02-2026 🗓
+
+23. Async await
+
 
 Not Started ->
 Solving Js Problems in Namaste Dev
