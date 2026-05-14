@@ -3,15 +3,251 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Javascript</title>
+    <title>Smile Please</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f8fafc;
+        color: #0f172a;
+        min-height: 100vh;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      /* NAVBAR */
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 0;
+      }
+
+      .logo {
+        font-size: 30px;
+        font-weight: bold;
+        color: #2563eb;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #334155;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #2563eb;
+      }
+
+      /* HERO */
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 60px;
+        padding: 80px 0;
+      }
+
+      .hero-text h1 {
+        font-size: 58px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+      }
+
+      .hero-text span {
+        color: #2563eb;
+      }
+
+      .hero-text p {
+        color: #64748b;
+        font-size: 18px;
+        line-height: 1.7;
+        margin-bottom: 30px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 30px;
+        background: #2563eb;
+        color: white;
+        text-decoration: none;
+        border-radius: 14px;
+        font-weight: bold;
+        transition: 0.3s;
+        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        background: #1d4ed8;
+      }
+
+      /* CARD */
+
+      .card {
+        background: white;
+        border-radius: 28px;
+        padding: 24px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 20px;
+        display: block;
+      }
+
+      /* FEATURES */
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding-bottom: 80px;
+      }
+
+      .feature-box {
+        background: white;
+        padding: 30px;
+        border-radius: 22px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        transition: 0.3s;
+      }
+
+      .feature-box:hover {
+        transform: translateY(-8px);
+      }
+
+      .feature-box h3 {
+        color: #2563eb;
+        margin-bottom: 14px;
+      }
+
+      .feature-box p {
+        color: #64748b;
+        line-height: 1.7;
+      }
+
+      /* TABLET */
+
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .hero-text h1 {
+          font-size: 44px;
+        }
+
+        .features {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: column;
+          gap: 18px;
+        }
+
+        .nav-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .hero {
+          padding: 50px 0;
+        }
+
+        .hero-text h1 {
+          font-size: 34px;
+        }
+
+        .hero-text p {
+          font-size: 16px;
+        }
+
+        .features {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- Content goes here -->
-    <p>Javascript</p>
+    <div class="container">
+      <nav>
+        <div class="logo">☺ SmilePlease</div>
+
+        <ul class="nav-links">
+          <li><a href="#">Lorem</a></li>
+          <li><a href="#">Ipsum</a></li>
+          <li><a href="#">Dolor</a></li>
+          <li><a href="#">Smile ☺</a></li>
+        </ul>
+      </nav>
+
+      <section class="hero">
+        <div class="hero-text">
+          <h1>
+            Life Looks <span>Better</span> <br />
+            When We Smile <span>☺</span>
+          </h1>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+            molestiae smile ☺ architecto saepe illum voluptates.
+          </p>
+
+          <a href="#" class="btn">Smile More ☺</a>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368"
+            alt="Modern UI"
+          />
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="feature-box">
+          <h3>Lorem ☺</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>Ipsum ✨</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>Smile UI ☺</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </section>
+    </div>
+    <script src="/namasteJs/easy/findSmallest.js"></script>
   </body>
-  <!-- <script src="/playground.js"></script> -->
-   <!-- <script src="/others/confluence/index.js"></script> -->
-  <!-- <script src="/app.js"></script> -->
-   <!-- <script src="/namasteJs/easy/countVowels.js"></script> -->
-  <script src="/namasteJs/easy/formLargestNumber.js"></script>
 </html>

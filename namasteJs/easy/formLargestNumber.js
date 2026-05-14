@@ -1,9 +1,3 @@
-import "./styles.css";
-
-document.getElementById("app").innerHTML = `
-<h1>Hello world</h1>
-`;
-
 function formLargestNumber(arr) {
   //write your implementation here
 
@@ -83,5 +77,3 @@ const input = [3, 30, 34, 5, 9];
 // 95
 
 formLargestNumber(input);
-
-module.exports = formLargestNumber;
