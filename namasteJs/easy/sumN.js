@@ -1,11 +1,29 @@
 function sumN(n) {
-  // your solution here
+  if (!Number.isFinite(n) || n < 0 || !Number.isInteger(n)) {
+    return false;
+  }
 
-  return n;
+  let sumVal = 0;
+  for (let i = 1; i <= n; i++) {
+    sumVal = sumVal + i;
+  }
+
+  return sumVal;
 }
 
 const sampleInput = {
-  input1: 2,
+  base0: 0,
+  base1: 1,
+  smallNo0: 2,
+  smallNo1: 3,
+  smallNo2: 5,
+  largerNo0: 10,
+  largerNo1: 100,
+  invalidVal0: -1,
+  invalidVal1: 1.5,
+  invalidVal2: "5",
+  invalidVal3: null,
+  invalidVal4: [],
 };
 
 console.log(
