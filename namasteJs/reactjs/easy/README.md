@@ -9,4 +9,4 @@ Naal - 02-06-2026 🗓
 Naal - 03-06-2026 🗓
 
 3. DataTable
-   Created custom table for render data along with pagination functions
+   Created custom table for rendering data along with pagination functions
