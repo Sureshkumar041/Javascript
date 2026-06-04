@@ -6,7 +6,7 @@ Naal - 02-06-2026 🗓
 2. RecipeFilterApp
    Added ui card, filter for rating
 
-Naal - 03-06-2026 🗓
+Naal - 04-06-2026 🗓
 
-3. DataTable
-   Created custom table for rendering data along with pagination functions
+3. Toggle button with custom hook
+   A custom hook in React is a reusable JavaScript function whose name starts with "use" and that can call other React hooks
