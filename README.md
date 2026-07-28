@@ -96,3 +96,9 @@ Not Started ->
 Solving Js Problems in Namaste Dev
 
 <p>Write a function - findMaxNumber -> that takes an array of numbers as input and returns the largest number in the array. If the array is empty, return null.</p>
+
+# Leetcode Problem
+
+Easy
+
+27. Remove Element
