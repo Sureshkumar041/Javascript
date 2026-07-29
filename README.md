@@ -99,6 +99,10 @@ Solving Js Problems in Namaste Dev
 
 # Leetcode Problem
 
-Easy
+Naal - 29-07-2026 🗓
 
-27. Remove Element
+27. Easy - Remove Element
+
+Naal - 30-07-2026 🗓
+
+26. Easy - Remove Duplicates from Sorted Array
