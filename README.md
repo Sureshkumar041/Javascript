@@ -106,3 +106,7 @@ Naal - 29-07-2026 🗓
 Naal - 30-07-2026 🗓
 
 26. Easy - Remove Duplicates from Sorted Array
+
+Naal - 04-08-2026 🗓
+
+977. Easy - Squares of a Sorted Array
