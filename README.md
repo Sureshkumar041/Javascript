@@ -110,3 +110,7 @@ Naal - 30-07-2026 🗓
 Naal - 04-08-2026 🗓
 
 977. Easy - Squares of a Sorted Array
+
+Naal - 21-08-2026 🗓
+
+9. Easy - Palindrome Number
