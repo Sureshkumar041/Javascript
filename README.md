@@ -114,3 +114,7 @@ Naal - 04-08-2026 🗓
 Naal - 21-08-2026 🗓
 
 9. Easy - Palindrome Number
+
+Naal - 24-08-2026 🗓
+
+7. Medium - Reverse Integer.js
