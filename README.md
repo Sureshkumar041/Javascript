@@ -130,5 +130,6 @@ Naal - 27-08-2026 🗓
 > 121. Easy - Best Time to Buy and Sell Stock
 > 88. Merge Sorted Array
 > 283. Move Zeroes
+> 268. Missing Number
 
 
