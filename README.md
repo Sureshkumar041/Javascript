@@ -118,3 +118,15 @@ Naal - 21-08-2026 🗓
 Naal - 24-08-2026 🗓
 
 7. Medium - Reverse Integer.js
+
+Naal - 26-08-2026 🗓
+
+> 26. Easy - Remove Duplicates from Sorted Array
+> 27. Easy - Remove Element
+
+Naal - 27-08-2026 🗓
+
+> 344. Reverse String
+
+
+
