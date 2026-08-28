@@ -132,4 +132,8 @@ Naal - 27-08-2026 🗓
 > 283. Move Zeroes
 > 268. Missing Number
 
+Naal - 28-08-2026 🗓
+
+> 136. Single Number
+
 
